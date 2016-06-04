@@ -21,6 +21,9 @@ public class HttpUtil {
                     connection.setRequestMethod("GET");//get方式
                     connection.setConnectTimeout(8000);//连接超时
                     connection.setReadTimeout(8000);
+
+                    connection.setRequestProperty("Content-type", "application/x-java-serialized-object");
+
                     InputStream in = connection.getInputStream();//获取输入流
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in));//获取bufferReader
                     StringBuilder response = new StringBuilder();//新建StringBuilder对象
